@@ -39,6 +39,4 @@ Then call the validator using onSubmit:
 	
 ## Demo
 
-You can play with the demo in here
-
-	http://jsfiddle.net/elalecs/Z5Bkj/1/
+You can play with the demo in here http://jsfiddle.net/elalecs/Z5Bkj/1/
