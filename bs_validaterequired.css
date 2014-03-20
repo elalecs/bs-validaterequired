@@ -1,0 +1,3 @@
+.validateRequired.top .tooltip-arrow { border-top-color:#F21F0F; }
+.validateRequired.bottom .tooltip-arrow { border-bottom-color:#F21F0F; }
+.validateRequired .tooltip-inner { padding:7px 10px; background-color: #F21F0F; }
