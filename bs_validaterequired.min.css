@@ -1,0 +1,8 @@
+/**
+ * Bootstrap Form Validation Engine
+ * Licensed under the MIT License
+ *
+ * @author Alecs Galindo, twitter.com/elalecs
+ * @copyright Tecnologías Web de México S.A. de C.V.
+ */
+.validateRequired.top .tooltip-arrow{border-top-color:#f21f0f}.validateRequired.bottom .tooltip-arrow{border-bottom-color:#f21f0f}.validateRequired .tooltip-inner{padding:7px 10px;background-color:#f21f0f}
