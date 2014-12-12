@@ -7,10 +7,9 @@
   ],
   "description": "A form validation engine using bootstrap tooltips, like jQuery Validation Engine",
   "main": [
-    "bs_validaterequired.css",
-    "bs_validaterequired.min.js"
+    "./bs_validaterequired.css",
+    "./bs_validaterequired.min.js"
   ],
-  "main": ,
   "keywords": [
     "boostrap",
     "formvalidation",
