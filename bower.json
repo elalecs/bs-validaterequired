@@ -1,0 +1,32 @@
+{
+  "name": "bootstrap-formvalidate",
+  "version": "0.1",
+  "homepage": "https://github.com/elalecs/bs-validaterequired",
+  "authors": [
+    "ElAlecs (http://twitter.com/elalecs)"
+  ],
+  "description": "A form validation engine using bootstrap tooltips, like jQuery Validation Engine",
+  "main": [
+    "bs_validaterequired.css",
+    "bs_validaterequired.min.js"
+  ],
+  "main": ,
+  "keywords": [
+    "boostrap",
+    "formvalidation",
+    "validationengine",
+    "tooltip"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.0",
+    "bootstrap": ">= 3.0.0"
+  }
+}
