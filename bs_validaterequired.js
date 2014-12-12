@@ -17,7 +17,7 @@
 		if(!form[0]) return form;  // stop here if the form does not exist
 		var errors = false;
 
-		$('input[data-validate],textarea[data-validate],select[data-validate]').each(function() {
+		form.find('input[data-validate]:visible,textarea[data-validate]:visible,select[data-validate]:visible').each(function() {
 			field = $(this);
 
 			var validate = field.data('validate');
@@ -37,21 +37,29 @@
 			if (validate === "required") {
 				if (type === "email") {
 					if (!regexps.email.test(val)) {
-						errors = notify(field, 'Correo inválido');
+						errors = field.validateNotify('Correo inválido');
 					}
 				}
+				if (type === "checkbox" && !field.is(':checked')) {
+					errors = field.validateNotify('Campo requerido');
+				}
 				if (typeof(params.minsize) !== 'undefined') {
-					if (val.length < params.minsize) {
-						errors = notify(field, 'El mínimo de caracteres es de ' + params.minsize);
+					if (val.length < parseInt(params.minsize)) {
+						errors = field.validateNotify('El mínimo de caracteres es de ' + params.minsize);
 					}
 				}
 				if (typeof(params.maxsize) !== 'undefined') {
-					if (val.length > params.maxsize) {
-						errors = notify(field, 'El máximo de caracteres es de ' + params.maxsize);
+					if (val.length > parseInt(params.maxsize)) {
+						errors = field.validateNotify('El máximo de caracteres es de ' + params.maxsize);
 					}
 				}
-				if(val.length === 0) {
-					errors = notify(field, 'Campo requerido');
+				if (typeof(params.equal) !== 'undefined') {
+					if (val != form.find(params.equal).val()) {
+						errors = field.validateNotify('Los campos no son iguales');
+					}
+				}
+				if(val === null || val.length === 0) {
+					errors = field.validateNotify('Campo requerido');
 				}
 			}
 		});
@@ -59,7 +67,9 @@
 		return !errors;
 	};
 
-	var notify = function(field, message) {
+	$.fn.validateNotify = function(message) {
+		field = $(this);
+
 		if (field.hasClass('select2-offscreen')) {
 			field = field.parent().find(".select2-default");
 		}
